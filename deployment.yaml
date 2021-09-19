@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: my-lovely-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-lovely-app
+  template:
+    metadata:
+      labels:
+        app: my-lovely-app
+    spec:
+      containers:
+      - name: my-container-replicas
+        image: baroolescientifique/kubapp:1.0
+
